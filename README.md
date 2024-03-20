@@ -1,3 +1,8 @@
+# Implementación de OMP en contenedor docker para desarrollo de plugins y temas
+
+
+
+Forked from: marcbria/docker-pkp(https://github.com/marcbria/docker-pkp)
 # Docker for PKP
 
 A docker image generator for PKP tools (aka. OJS, OMP, OPS).
