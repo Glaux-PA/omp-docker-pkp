@@ -1,5 +1,13 @@
 # Implementación de OMP en contenedor docker para desarrollo de plugins y temas
 
+* Actualizado a la versión 3.3.0.17
+* Retocados los archivos de configuración para hacer más sencilla la implementación
+
+
+## Pendiente:
+* Montar la carpeta de plugins -> script para copiar los plugins del contenedor al host
+* Al terminar la instalación, tenemos que sobreescribir manualmente el archivo config.inc.php -> buscar una forma de automatizar este proceso
+
 
 
 Forked from: marcbria/docker-pkp(https://github.com/marcbria/docker-pkp)

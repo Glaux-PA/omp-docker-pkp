@@ -7,16 +7,18 @@ services:
     env_file:
       - .env
     container_name: "pkp_db_${COMPOSE_PROJECT_NAME:-demo}"
+    ports:
+      - "3306:3306" 
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD:-pkpPwd}"
       MYSQL_DATABASE: "${MYSQL_DATABASE:-pkp}"
       MYSQL_USER: "${MYSQL_USER:-pkp}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD:-pkpPwd}"
-#    volumes:
-#      - ./volumes/db:/var/lib/mysql
-#      - ./volumes/logs/db:/var/log/mysql
-#      - ./volumes/config/db.charset.conf:/etc/mysql/conf.d/charset.cnf
-#      - ./volumes/migration:/docker-entrypoint-initdb.d
+    volumes:
+      - ./volumes/db:/var/lib/mysql
+      - ./volumes/logs/db:/var/log/mysql
+      - ./volumes/config/db.charset.conf:/etc/mysql/conf.d/charset.cnf
+      - ./volumes/migration:/docker-entrypoint-initdb.d
     networks:
       - inside
     restart: always
@@ -40,7 +42,7 @@ services:
 #      - ./volumes/public:/var/www/html/public
 #      - ./volumes/logs/app:/var/log/apache2
 #      # WARNING: You can only enable file-volumes if file exists in the container.
-#      - ./volumes/config/ojs.config.inc.php:/var/www/html/config.inc.php
+      - ./volumes/config/config.inc.php:/var/www/html/config.inc.php
       - ./volumes/config/apache.htaccess:/var/www/html/.htaccess
       - ./volumes/config/php.custom.ini:/usr/local/etc/php/conf.d/custom.ini
 
