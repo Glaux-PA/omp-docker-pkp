@@ -6,11 +6,14 @@
 
 ## Pendiente:
 * Montar la carpeta de plugins -> script para copiar los plugins del contenedor al host
+
+  * De forma temporal, al completar la instalación, nos descargamos la versión de omp y copiamos el contenido de la carpeta plugins a la carpeta ./volumes/plugins
 * Al terminar la instalación, tenemos que sobreescribir manualmente el archivo config.inc.php -> buscar una forma de automatizar este proceso
 
 
 
-Forked from: marcbria/docker-pkp(https://github.com/marcbria/docker-pkp)
+##### Forked from: marcbria/docker-pkp(https://github.com/marcbria/docker-pkp)
+
 # Docker for PKP
 
 A docker image generator for PKP tools (aka. OJS, OMP, OPS).
