@@ -27,7 +27,7 @@ services:
     image: local/${PKP_TOOL}:3_3_0-17
     build: 
       context: .
-      dockerfile: Dockerfileç
+      dockerfile: Dockerfile
     env_file:
       - .env      
     #container_name: "${CONTAINER_NAME}"
@@ -58,5 +58,5 @@ services:
     restart: always
 
 networks:
-  inside:
+  inside:  
     external: false
