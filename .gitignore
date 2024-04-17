@@ -3,4 +3,5 @@
 older
 volumes/db
 volumes/plugins
+volumes/logs
 config.inc.php

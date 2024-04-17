@@ -43,7 +43,7 @@ services:
 #      - ./copy-plugins-script.sh:/usr/local/bin/copy_from_container.sh
 #      - ./volumes/private:/var/www/files
 #      - ./volumes/public:/var/www/html/public
-#      - ./volumes/logs/app:/var/log/apache2
+      - ./volumes/logs/app:/var/log/apache2
 #      # WARNING: You can only enable file-volumes if file exists in the container.
       - ./volumes/config/config.inc.php:/var/www/html/config.inc.php
       - ./volumes/config/apache.htaccess:/var/www/html/.htaccess

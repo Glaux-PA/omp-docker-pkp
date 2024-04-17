@@ -2,13 +2,29 @@
 
 * Actualizado a la versión 3.3.0.17
 * Retocados los archivos de configuración para hacer más sencilla la implementación
+* Montar carpetas de log/apache y plugins
 
 
 ## Pendiente:
-* Montar la carpeta de plugins -> script para copiar los plugins del contenedor al host
-
+* Script para copiar los plugins del contenedor al host de forma automatizada
   * De forma temporal, al completar la instalación, nos descargamos la versión de omp y copiamos el contenido de la carpeta plugins a la carpeta ./volumes/plugins
 * Al terminar la instalación, tenemos que sobreescribir manualmente el archivo config.inc.php -> buscar una forma de automatizar este proceso
+
+
+
+### Instrucciones:
+* Descargar el repositorio
+* Descargar la aplicación OMP 3.3.0.17 de la web de pkp
+* Revisar los datos de configuración de .env
+* Copiar el archivo "config.inc.php" de la aplicación OMP descargada(web pkp) en el contenedor -> volumnes/config/
+* Lanzar el contenedor -> docker-compose up -d
+* Acceder a la url -> http://localhost:8100 (u otro puerto según la config de .env HTTP_PORT)
+* Revisar los permisos de los archivos y carpetas necesarios -> se mostrará una lista con los permisos y si están correctamente
+* Completamos el formulario de instalación -> en el campo de BBDD es posible que en lugar de localhost tengamos que poner el nombre del servicio -> db
+* Al finalizar la instalación, es posible que nos pida sobreescribir el archivo config.inc.php con el contenido de una caja de texto -> en este caso, seguir las instrucciones
+* Si todo es correcto, podremos acceder al portal OMP
+* Dar permisos a la carpeta volumes/plugins -> lectura y escritura
+* Copiar el contenido de la aplicación descargada OMP -> plugins(todos) a la carpeta del contenedor -> volumes/plugins
 
 
 
